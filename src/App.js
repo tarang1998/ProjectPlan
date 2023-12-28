@@ -18,7 +18,7 @@ class App extends Component {
             <Route path='/project/:id' element={<ProjectDetails/>}/>
             <Route path='/signin' element={<SignIn/>}/>
             <Route path='/signup' element={<SignUp/>}/>
-            <Route path='/createProject  ' element={<CreateProject/>}/>
+            <Route path='/createProject' element={<CreateProject/>}/>
 
           </Routes>
         </div>
