@@ -8,8 +8,6 @@ const ProjectDetails = (props) => {
 
   const { id } = useParams();
 
-  console.log(props)
-
   const project = props.projects? props.projects[id]:null;
 
   if (project) {
