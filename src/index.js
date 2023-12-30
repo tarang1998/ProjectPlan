@@ -14,7 +14,7 @@ import thunk from 'redux-thunk';
 const store = createStore(rootReducer,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    reactReduxFirebase(config, { attachAuthIsReady: true }), // redux binding for firebase
+    reactReduxFirebase(config, { userProfile: 'users', useFirestoreForProfile: true,attachAuthIsReady: true }), // redux binding for firebase
     reduxFirestore(config) // redux bindings for firestore
   )
 );

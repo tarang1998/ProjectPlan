@@ -3,10 +3,13 @@ import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectActions'
 import { Navigate } from 'react-router-dom'
 
+
+
 class CreateProject extends Component {
   state = {
     title: '',
-    content: ''
+    content: '',
+    submitted : false
   }
   handleChange = (e) => {
     this.setState({
@@ -14,12 +17,17 @@ class CreateProject extends Component {
     })
   }
   handleSubmit = (e) => {
+    const { navigate } = this.props;
+
     e.preventDefault();
     this.props.createProject(this.state);
+    this.setState({submitted: true});
+
   }
   render() {
     const { auth } = this.props;
     if (!auth.uid) return <Navigate to='/signin' /> 
+    if (this.state.submitted) return <Navigate to='/' />
 
     return (
       <div className="container">
