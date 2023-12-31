@@ -1,5 +1,7 @@
 # ProjectPlan
 
+![/](/projectPlan.png)
+
 - Hosted at [https://taskmanager-2772c.web.app/signin](https://taskmanager-2772c.web.app/signin)
 
 ## Installing the application
@@ -14,6 +16,8 @@ git clone https://github.com/tarang1998/ProjectPlan.git
 ```
 npm install
 ```
+
+- Create a firebase project 
 
 - Add firebase config file in src as config/firebaseConfig
 ```
@@ -34,6 +38,24 @@ firebase.initializeApp(firebaseConfig);
 firebase.firestore().settings({ timestampsInSnapshots: true });
 
 export default firebase 
+```
+
+- Run the project locally 
+```
+npm start
+```
+
+## Deploying the project
+
+- Deploying the firebase functions 
+```
+npm deploy --only functions
+```
+
+- Hosting the web page
+```
+npm build 
+firebase deploy
 ```
 
 
